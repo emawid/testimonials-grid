@@ -94,6 +94,11 @@ main {
 /* Media-queries */
 
 @media (min-width: 1440px) {
+  body {
+    display: grid;
+    place-items: center;
+  }
+
   main {
     grid-template-columns: repeat(4, 255px);
     grid-auto-rows: 282px 266px;
@@ -102,7 +107,7 @@ main {
       'third fourth fourth fifth';
     column-gap: 30px;
     row-gap: 24px;
-    margin-top: 164px;
+    margin: 0;
   }
 
   .card {

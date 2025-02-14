@@ -1,0 +1,141 @@
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  justify-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  max-width: 1110px;
+  margin-inline: auto;
+}
+
+/* Shared components */
+.card {
+  border-radius: 8px;
+  max-width: 327px;
+  padding: 26px 32px 32px 32px;
+  box-shadow: 40px 60px 50px -47px rgb(72 85 106 / 24.74%);
+}
+
+.avatar {
+  display: flex;
+  gap: 17px;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 18px;
+}
+
+.avatar-image {
+  border-radius: 50%;
+}
+
+.avatar-text {
+  margin-top: 0;
+  display: grid;
+  align-items: center;
+}
+
+.avatar-text-name {
+  margin-top: 0;
+  margin-bottom: 4px;
+}
+
+.avatar-text-verified {
+  margin: 0;
+}
+
+.quote-highlight {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.quote-text {
+  margin: 0px;
+}
+
+/* Unique components */
+
+#daniel.card {
+  background-color: var(--moderate-violet);
+  background-image: url('./images/bg-pattern-quotation.svg');
+  background-repeat: no-repeat;
+  background-position: right 24px top;
+}
+
+#daniel .quote-highlight {
+  margin-bottom: 40px;
+}
+
+#daniel .quote-text {
+  padding-right: 16px;
+}
+
+#daniel .avatar-image,
+#patrick .avatar-image {
+  border: 2px solid #a775f1;
+}
+
+#jonathan.card {
+  background-color: var(--very-dark-grayish-blue);
+}
+
+#jeanette.card {
+  background-color: var(--white);
+}
+
+#patrick.card {
+  background-color: var(--very-dark-blackish-blue);
+}
+
+#kira.card {
+  background-color: var(--white);
+}
+
+/* Media-queries */
+
+@media (min-width: 1440px) {
+  main {
+    grid-template-columns: repeat(4, 255px);
+    grid-auto-rows: 282px 266px;
+    grid-template-areas:
+      'first first second fifth'
+      'third fourth fourth fifth';
+    column-gap: 30px;
+    row-gap: 24px;
+    margin-top: 164px;
+  }
+
+  .card {
+    max-width: 540px;
+  }
+
+  .quote-highlight {
+    margin-bottom: 16px;
+  }
+
+  #daniel {
+    grid-area: first;
+  }
+  #daniel.card {
+    background-position: right 80px top;
+  }
+
+  #daniel .quote-highlight {
+    margin-bottom: 16px;
+  }
+
+  #jonathan {
+    grid-area: second;
+  }
+
+  #jeanette {
+    grid-area: third;
+  }
+
+  #patrick {
+    grid-area: fourth;
+  }
+  #kira {
+    grid-area: fifth;
+  }
+}
